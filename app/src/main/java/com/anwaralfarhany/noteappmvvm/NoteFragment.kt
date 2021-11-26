@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import com.anwaralfarhany.noteappmvvm.databinding.FragmentNoteBinding
 
 class NoteFragment : BaseFragment<FragmentNoteBinding>(R.layout.fragment_note) {
     override val viewModel by activityViewModels<NoteViewModel>()
