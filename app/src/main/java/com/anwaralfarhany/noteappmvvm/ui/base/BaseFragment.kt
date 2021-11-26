@@ -1,4 +1,4 @@
-package com.anwaralfarhany.noteappmvvm
+package com.anwaralfarhany.noteappmvvm.ui.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

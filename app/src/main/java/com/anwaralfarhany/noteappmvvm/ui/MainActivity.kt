@@ -1,8 +1,9 @@
-package com.anwaralfarhany.noteappmvvm
+package com.anwaralfarhany.noteappmvvm.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.anwaralfarhany.noteappmvvm.R
 import com.anwaralfarhany.noteappmvvm.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

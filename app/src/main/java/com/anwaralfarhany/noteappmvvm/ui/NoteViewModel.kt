@@ -1,4 +1,4 @@
-package com.anwaralfarhany.noteappmvvm
+package com.anwaralfarhany.noteappmvvm.ui
 
 import androidx.lifecycle.ViewModel
 
