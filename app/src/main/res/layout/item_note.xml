@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="item"
+            type="com.anwaralfarhany.noteappmvvm.data.Note" />
+        <variable
+            name="listener"
+            type="com.anwaralfarhany.noteappmvvm.ui.note.NoteInteractionListener" />
     </data>
 
     <androidx.cardview.widget.CardView
