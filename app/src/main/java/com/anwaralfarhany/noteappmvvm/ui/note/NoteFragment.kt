@@ -15,5 +15,9 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(R.layout.fragment_note) {
 
     override fun setupView() {
 
+        binding.apply {
+            viewModel = viewModel
+            noteRecycler.adapter = NoteAdapter(mutableListOf(), viewModel)
+        }
     }
 }
