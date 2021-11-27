@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,15 +9,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#BBCDD0">
+        android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/my_note_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="My Notes"
             android:fontFamily="@font/overlock_bold_italic"
-            android:textColor="#A4725F"
+            android:textColor="#516F74"
             android:textSize="32sp"
             android:layout_marginTop="16dp"
             android:paddingTop="8dp"
@@ -27,6 +28,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/note_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/my_note_text"
+            tools:listitem="@layout/item_note"/>
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_fab"
             android:layout_width="wrap_content"
@@ -34,7 +47,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:src="@drawable/ic_add"
-            app:backgroundTint="#A4725F"
+            app:backgroundTint="#516F74"
             app:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
