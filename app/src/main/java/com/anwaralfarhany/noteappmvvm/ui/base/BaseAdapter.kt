@@ -38,9 +38,16 @@ abstract class BaseAdapter<T>(
     }
 
     fun setItems(newItems : List<T>){
+        val diffUtil = DiffUtil.calculateDiff(NoteDiffUtils(items, newItems){ oldItems , newItems ->
+            areItemsSame(oldItems,newItems)
+        })
         items = newItems
-        notifyDataSetChanged()
+        diffUtil.dispatchUpdatesTo(this)
 
+    }
+
+    open fun areItemsSame(oldItems: T, newItems: T): Boolean{
+        return oldItems?.equals(newItems) == true
     }
 
     fun getItems() = items
