@@ -6,14 +6,14 @@ import com.anwaralfarhany.noteappmvvm.data.Note
 @Dao
 interface NoteDao {
     @Insert
-    fun insertNote(note: Note)
+    suspend fun insertNote(note: Note)
 
     @Delete
-    fun deletNote(note: Note)
+    suspend fun deleteNote(note: Note)
 
     @Update
-    fun updateNote(note: Note)
+    suspend fun updateNote(note: Note)
 
-    @Query("SELECT * from NOTE_TABLE" )
-    fun getAllNotes()
+    @Query("SELECT * from NOTE_TABLE ORDER BY id" )
+    fun getAllNotes() : List<Note>
 }
