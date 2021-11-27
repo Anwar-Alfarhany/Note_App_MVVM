@@ -18,5 +18,5 @@ class NoteRepository {
         dao.updateNote(note)
     }
 
-    suspend fun getAllNotes() = dao.getAllNotes()
+    fun getAllNotes() = dao.getAllNotes()
 }
