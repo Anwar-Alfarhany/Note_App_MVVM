@@ -14,13 +14,13 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:elevation="14dp"
         android:layout_marginStart="@dimen/medium_margin"
         android:layout_marginEnd="@dimen/medium_margin"
         android:layout_marginTop="@dimen/little_margin"
         android:layout_marginBottom="@dimen/little_margin"
-        app:cardBackgroundColor="#D8E2E4"
+        app:cardBackgroundColor="@color/background_color"
         app:cardCornerRadius="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,6 +38,7 @@
                 android:paddingStart="@dimen/small_padding"
                 android:paddingTop="@dimen/small_padding"
                 android:textSize="14sp"
+                android:textColor="@color/item_text_color"
                 android:text="@{item.title}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -52,6 +53,7 @@
                 android:paddingStart="@dimen/small_padding"
                 android:paddingTop="@dimen/small_padding"
                 android:textSize="12sp"
+                android:textColor="@color/item_text_color"
                 android:text="@{item.description}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title"
@@ -69,7 +71,9 @@
                 android:layout_marginEnd="@dimen/small_margin"
                 android:layout_marginStart="@dimen/small_margin"
                 android:layout_marginTop="@dimen/small_margin"
+                android:textColor="@color/item_text_color"
                 android:text="@{item.date.toString()}"
+                app:layout_constraintTop_toBottomOf="@id/description"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="2021/11/27"/>

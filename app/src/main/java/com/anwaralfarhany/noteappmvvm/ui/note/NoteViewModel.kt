@@ -3,14 +3,20 @@ package com.anwaralfarhany.noteappmvvm.ui.note
 import androidx.lifecycle.*
 import com.anwaralfarhany.noteappmvvm.data.Note
 import com.anwaralfarhany.noteappmvvm.data.repository.NoteRepository
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import java.util.*
 
-class NoteViewModel : ViewModel(), NoteInteractionListener {
+class NoteViewModel : ViewModel() {
     private val repository = NoteRepository()
-    val noteTitle = MutableLiveData<String>()
-    val noteDescription = MutableLiveData<String>()
-    val notes: LiveData<List<Note>> = repository.getAllNotes().asLiveData()
+    val noteTitle = MutableStateFlow(String())
+    val noteDescription = MutableStateFlow(String())
+    val notes = MutableStateFlow(listOf<Note>())
+
+    init {
+        showNotes()
+    }
 
     fun addNewNote() {
         viewModelScope.launch {
@@ -19,8 +25,16 @@ class NoteViewModel : ViewModel(), NoteInteractionListener {
                     title = it,
                     noteDescription.value,
                     Date()))
-                noteTitle.postValue("")
-                noteDescription.postValue("")
+                noteTitle.emit("")
+                noteDescription.emit("")
+            }
+        }
+    }
+
+    fun showNotes(){
+        viewModelScope.launch {
+            repository.getAllNotes().collect {
+                notes.emit(it)
             }
         }
     }

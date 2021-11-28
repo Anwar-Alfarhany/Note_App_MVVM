@@ -17,7 +17,7 @@ class NoteFragment : BaseFragment<FragmentNoteBinding>(R.layout.fragment_note) {
 
         binding.apply {
             viewModel = viewModel
-            noteRecycler.adapter = NoteAdapter(mutableListOf(), viewModel)
+            noteRecycler.adapter = NoteAdapter(mutableListOf(), object : NoteInteractionListener{})
         }
     }
 }
